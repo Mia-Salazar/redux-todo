@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/todomvc-app-css/index.css"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "redux-todo"
+    }
+  },
+  "defaultProject": "redux-todo",
+  "cli": {
+    "analytics": "8f8d2bdb-34be-4e24-a1cb-ebbf57d6bf54"
+  }
 }
