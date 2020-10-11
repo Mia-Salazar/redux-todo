@@ -1,1 +1,7 @@
-<p>todo-add works!</p>
+<header class="header">
+    <h1>Todo with Redux</h1>
+    <p class="header-error" *ngIf="error">Please, try again</p>
+    <input class="new-todo" placeholder="Add your task" autofocus
+            [formControl]="input" (keyup.enter)="add()">
+
+</header>

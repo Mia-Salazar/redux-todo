@@ -1,5 +1,5 @@
 import { Todo } from './models/todo.models';
 
-export interface State {
-    todo: Todo[]
+export interface AppState {
+    todos: Todo[]
 }

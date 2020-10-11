@@ -1,0 +1,18 @@
+h1 {
+    top: -95px;
+    color: #2F614D;
+    font-size: 24px;
+
+    @media(min-width: 768px){
+        top: -130px;
+        font-size: 64px;
+    }
+}
+
+.header-error {
+    width: 100%;
+    position: absolute;
+    top: -50px;
+    color: #b83f45;
+    text-align:center;
+}
