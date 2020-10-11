@@ -5,3 +5,9 @@ export const create = createAction (
     props<{ text:string }>()
 
 );
+
+export const complete = createAction (
+    'complete',
+    props<{ id:number}>()
+
+);
