@@ -14,3 +14,8 @@ export const edit = createAction (
     'edit',
     props<{ id:number, text:string}>()
 );
+
+export const erase = createAction (
+    'erase',
+    props<{ id:number}>()
+);

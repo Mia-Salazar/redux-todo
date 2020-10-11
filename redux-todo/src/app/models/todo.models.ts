@@ -7,6 +7,5 @@ export class Todo {
         this.text = text;
         this.id = Math.floor(Math.random() * 500);;
         this.completed = false;
-
     }
 }

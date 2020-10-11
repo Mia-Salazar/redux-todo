@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { complete, edit } from '../redux/todo.actions';
+import { complete, edit, erase } from '../redux/todo.actions';
 import { Todo } from '../models/todo.models';
 import { AppState } from '../app.reducers';
 
@@ -33,5 +33,9 @@ export class TodoItemComponent implements OnInit {
     if(!this.inputText.invalid || this.inputText.value !== this.todo.text) {
       this.store.dispatch(edit({id: this.todo.id, text: this.inputText.value}))
     } 
+  }
+
+  erase(){
+    this.store.dispatch(erase({id:this.todo.id}))
   }
 }
