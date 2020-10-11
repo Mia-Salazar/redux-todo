@@ -19,3 +19,8 @@ export const erase = createAction (
     'erase',
     props<{ id:number}>()
 );
+
+export const completeAll = createAction (
+    'completeAll',
+    props<{ completed:boolean}>()
+);

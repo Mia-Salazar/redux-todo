@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Todo } from '../models/todo.models';
-import { create, complete, edit, erase } from './todo.actions';
+import { create, complete, edit, erase, completeAll } from './todo.actions';
  
 export const initialState:Todo[] = [
   new Todo('Add tasks'),
@@ -30,6 +30,12 @@ const _todoReducer = createReducer(
     })
   }),
   on(erase, (state, {id}) => state.filter (todo => todo.id !== id)),
+  on(completeAll, (state, {completed}) => state.map (todo => {
+    return {
+      ...todo,
+      completed: completed
+    }
+  })),
 )
  
 export function todoReducer(state, action) {

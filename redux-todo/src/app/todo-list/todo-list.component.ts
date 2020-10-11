@@ -19,5 +19,4 @@ export class TodoListComponent implements OnInit {
         console.log(this.todos);
       });
   }
-
 }
