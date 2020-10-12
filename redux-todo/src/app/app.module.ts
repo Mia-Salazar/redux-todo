@@ -11,8 +11,8 @@ import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
-import { todoReducer } from './redux/todo.reducer';
 import { environment } from 'src/environments/environment';
+import { appReducers } from './app.reducers';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    StoreModule.forRoot({ todo: todoReducer }),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

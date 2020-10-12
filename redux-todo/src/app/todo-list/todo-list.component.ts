@@ -9,14 +9,13 @@ import { AppState } from '../app.reducers';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  todos:Todo[] = [];
+  todos = [];
 
   constructor(private store:Store<AppState>) { }
 
   ngOnInit(): void {
     this.store.subscribe(todos =>{
-        this.todos = todos['todo'];
-        console.log(this.todos);
+        return this.todos = todos.todos;
       });
   }
 }
