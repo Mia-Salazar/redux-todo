@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { element } from 'protractor';
 import { AppState } from '../app.reducers';
 import { validFilter } from '../redux/filter.actions';
 import { setFilter } from '../redux/filter.actions';
@@ -11,16 +12,18 @@ import { setFilter } from '../redux/filter.actions';
 })
 export class TodoFooterComponent implements OnInit {
   currentFilter: validFilter = 'all';
-  filters: validFilter[] = ['all', 'completed', 'pending']
+  filters: validFilter[] = ['all', 'completed', 'pending'];
+  pending = 0;
 
   constructor(private store:Store<AppState>) { }
 
   ngOnInit(): void {
-    this.store.select('filter').subscribe(
-      filter =>{
-        this.currentFilter = filter;
-      } 
-    )
+    this.store.subscribe(state => {
+      this.currentFilter = state.filter;
+      console.log(state.todos, 'todos')
+      this.pending = state.todos.filter(todo => !todo.completed).length;
+    })
+
   }
 
   changeFilter(filter: validFilter){
